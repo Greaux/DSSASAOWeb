@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+
 	var url string
 
 	// Getting URL
@@ -15,7 +16,7 @@ func main() {
 	fmt.Printf("Analyzing %s ...\n", url)
 
 	// Creating Data file for domain
-	CreateNewFiles(url) // finished
+	CreateNewFiles(url)
 
 	// Getting https request
 	resp, err := http.Get("http://" + url)
@@ -28,6 +29,7 @@ func main() {
 	resp.Write(f)
 	f.Close()
 	fmt.Println("html file created and wrote successfully")
+
 	// save final URL (to check redirects)
 	FinalURL := resp.Request.URL.String()
 

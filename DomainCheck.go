@@ -89,10 +89,10 @@ func DomainCheckModule(whois Whois, url string) {
 	}
 
 	if strings.Contains(url, whois.WhoisRecord.DomainName) {
-		WriteAnswerToData(url, "DomainName is OK")
+		WriteAnswerToData(url, "DomainName OK")
 		fmt.Println("DomainName is OK")
 	} else {
-		WriteAnswerToData(url, "DomainName is NOT K")
+		WriteAnswerToData(url, "DomainName error")
 		fmt.Println("DomainName is NOT K")
 	}
 }

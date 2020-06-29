@@ -25,8 +25,6 @@ func MainQuestions(url string) {
 	}
 	if answer == 4 {
 		SocialWeb(url)
-	} else {
-		fmt.Print("Ошибочный тип \n")
 	}
 
 }
@@ -57,15 +55,16 @@ func Cloud(url string)  {
 	var answer string
 	WriteAnswerToData(url, "Type=Cloud")
 
-	fmt.Print("Ваша платформа имеет достаточно компетентных модераторов?\n")
-	fmt.Print("Нет/Не знаю - 0, Да - 1. \n")
-	fmt.Fscan(os.Stdin, &answer)
-	WriteAnswerToData(url, "Moderators="+answer)
 
 	fmt.Print("Ваша платформа имеет ограничения для новых пользователей?\n")
 	fmt.Print("Нет/Не знаю - 0, Да - 1. \n")
 	fmt.Fscan(os.Stdin, &answer)
 	WriteAnswerToData(url, "Limitations="+answer)
+
+	fmt.Print("Ваша платформа имеет достаточно компетентных модераторов?\n")
+	fmt.Print("Нет/Не знаю - 0, Да - 1. \n")
+	fmt.Fscan(os.Stdin, &answer)
+	WriteAnswerToData(url, "Moderators="+answer)
 
 	DefaultQuestList(url)
 
@@ -92,15 +91,16 @@ func SocialWeb(url string)  {
 	var answer string
 	WriteAnswerToData(url, "Type=SW")
 
+	fmt.Print("Ваша платформа имеет ограничения для новых пользователей?\n")
+	fmt.Print("Нет/Не знаю - 0, Да - 1. \n")
+	fmt.Fscan(os.Stdin, &answer)
+	WriteAnswerToData(url, "Limitations="+answer)
+
 	fmt.Print("Ваша платформа имеет достаточно компетентных сотрудников?\n")
 	fmt.Print("Нет/Не знаю - 0, Да - 1. \n")
 	fmt.Fscan(os.Stdin, &answer)
 	WriteAnswerToData(url, "Moderators="+answer)
 
-	fmt.Print("Ваша платформа имеет ограничения для новых пользователей?\n")
-	fmt.Print("Нет/Не знаю - 0, Да - 1. \n")
-	fmt.Fscan(os.Stdin, &answer)
-	WriteAnswerToData(url, "Limitations="+answer)
 
 	DefaultQuestList(url)
 }
